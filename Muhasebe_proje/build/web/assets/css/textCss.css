@@ -1,0 +1,34 @@
+.navbar{
+    background-color: #d33d18 !important;
+}
+.nav-link, .navbar-brand{
+    color: #FFF !important;
+}
+.footer{
+    padding-top:25px;
+}
+.bannertext{
+    padding-left: 500px;
+    padding-top: 100px;
+}
+.bannertext2{
+    padding-left: 500px;
+    padding-top: 10px;
+}
+.form-group{
+    margin-left: 370px;
+}
+.btn{
+    margin-left: 370px;
+}
+.card-body{
+    background-image: url("img/muhasebe.jpg");
+    height: 200px;
+    width: 290px;
+}
+.bannerback{
+	opacity: 0.8;      
+}
+.btn{
+   background: #d33d18;
+}
