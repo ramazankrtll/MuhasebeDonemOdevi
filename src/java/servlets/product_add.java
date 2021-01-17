@@ -80,7 +80,7 @@ public class product_add extends HttpServlet {
         if (request.getParameter("action").equals("add")) {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/muhasebe?useUnicode=true&useLegacyDatetimeCode=false&serverTimezone=Turkey", "root", "");
+                con = DriverManager.getConnection("jdbc:mysql://b034d5b35bbf23:a420dbcd@eu-cdbr-west-03.cleardb.net/heroku_1eb6b33e63b0397?reconnect=true", "b034d5b35bbf23", "a420dbcd");
                 String userQuery = " insert into products (product_name,company_id,cost,piece,sell_cost)"
                         + " values (?, ?, ?, ?, ?)";
                 PreparedStatement ps2 = con.prepareStatement(userQuery);
@@ -101,7 +101,7 @@ public class product_add extends HttpServlet {
             try {
                 
                 Class.forName("com.mysql.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/muhasebe?useUnicode=true&useLegacyDatetimeCode=false&serverTimezone=Turkey", "root", "");
+                con = DriverManager.getConnection("jdbc:mysql://b034d5b35bbf23:a420dbcd@eu-cdbr-west-03.cleardb.net/heroku_1eb6b33e63b0397?reconnect=true", "b034d5b35bbf23", "a420dbcd");
                 String productQuery = "update products set product_name = ?, cost = ?, piece = ?, sell_cost = ? where product_id = ?";
                 PreparedStatement preparedStmt = con.prepareStatement(productQuery);
                 preparedStmt.setString(1, request.getParameter("product_name"));

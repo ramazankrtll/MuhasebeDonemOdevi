@@ -86,7 +86,7 @@ public class LoginServlet extends HttpServlet {
        
         try {
           Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/muhasebe?useUnicode=true&useLegacyDatetimeCode=false&serverTimezone=Turkey", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://b034d5b35bbf23:a420dbcd@eu-cdbr-west-03.cleardb.net/heroku_1eb6b33e63b0397?reconnect=true", "b034d5b35bbf23", "a420dbcd");
             sqlLogin = "SELECT users.user_id,users.name,users.surname,users.email,users.company_id,users.role_id,companies.company_name,companies.company_location,companies.web_address, users.photo from users,companies where email = ? and password=? and users.company_id = companies.company_id";
             stmt = con.prepareStatement(sqlLogin);
             stmt.setString(1, request.getParameter("email"));

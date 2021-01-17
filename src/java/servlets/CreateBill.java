@@ -67,7 +67,7 @@ public class CreateBill extends HttpServlet {
         PreparedStatement stmt;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/muhasebe?useUnicode=true&useLegacyDatetimeCode=false&serverTimezone=Turkey", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://b034d5b35bbf23:a420dbcd@eu-cdbr-west-03.cleardb.net/heroku_1eb6b33e63b0397?reconnect=true", "b034d5b35bbf23", "a420dbcd");
             String sqlBill = " insert into bill (bill_id,seller_id,buyer_id,bill_cost,paid_cost)"
                     + " values (?, ?, ?, ?, ?)";
             PreparedStatement ps2 = con.prepareStatement(sqlBill);
