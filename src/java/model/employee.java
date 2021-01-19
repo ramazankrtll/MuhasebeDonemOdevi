@@ -42,7 +42,7 @@ public class employee {
         }else if(this.role_id==3){
             return "Ürün Danışmanı";
         }
-        return "Hesap Müdürü";
+        return "İnsan Kaynakları";
     }
 
     public String getName() {

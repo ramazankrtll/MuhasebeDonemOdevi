@@ -25,6 +25,7 @@
     </head>
 
     <body class="">
+
     <div class="wrapper ">
         <div class="sidebar" data-color="orange">
             <!--
@@ -43,6 +44,7 @@
                             <p>Anasayfa</p>
                         </a>
                     </li>
+
                     <li>
                         <a href="user.jsp">
                             <i class="now-ui-icons users_single-02"></i>

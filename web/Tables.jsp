@@ -28,8 +28,12 @@
             <!-- CSS Just for demo purpose, don't include it in your project -->
             <link href="assets/demo/demo.css" rel="stylesheet" />
             </head>
-
             <body class="">
+                <%
+                    if (session.getAttribute("role_id").equals("2") || session.getAttribute("role_id").equals("3")) {
+                        response.sendRedirect("dashbord.jsp");
+                    }
+                %>
             <div class="wrapper ">
                 <div class="sidebar" data-color="orange">
                     <!--
@@ -42,30 +46,34 @@
                     </div>
                     <div class="sidebar-wrapper" id="sidebar-wrapper">
                         <ul class="nav">
-                            <li class="active ">
+                           
+                               <li class="active">
                                 <a href="dashbord.jsp">
                                     <i class="now-ui-icons design_app"></i>
                                     <p>Anasayfa</p>
                                 </a>
                             </li>
+                           
                             <li>
                                 <a href="user.jsp">
                                     <i class="now-ui-icons users_single-02"></i>
                                     <p>Admin profili</p>
                                 </a>
                             </li>
+                            <%if(session.getAttribute("role_id").equals("1") || session.getAttribute("role_id").equals("4")){ %>
                             <li>
                                 <a href="Tables.jsp">
                                     <i class="now-ui-icons design_bullet-list-67"></i>
                                     <p>Kullanici listesi</p>
                                 </a>
                             </li>
+                            <% }%>
                             <li>
-                        <a href="bills.jsp">
-                            <i class="now-ui-icons files_paper"></i>
-                            <p>Faturalar</p>
-                        </a>
-                    </li> 
+                                <a href="bills.jsp">
+                                    <i class="now-ui-icons files_paper"></i>
+                                    <p>Faturalar</p>
+                                </a>
+                            </li> 
                         </ul>
                     </div>
                 </div>
@@ -168,7 +176,7 @@
                                                                         <option value="1">İşletme Sahibi</option>
                                                                         <option value="2">Ürün Müdürü</option>
                                                                         <option value="3">Ürün Danışmanı</option>
-                                                                        <option value="4">Hesap Müdürü</option>
+                                                                        <option value="4">İnsan Kaynakları</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -246,16 +254,16 @@
                                     $("#inputrole").val("2");
                                 } else if ($role1 == "Ürün Danışmanı") {
                                     $("#inputrole").val("3");
-                                } else if ($role1 == "Hesap Müdürü") {
+                                } else if ($role1 == "İnsan Kaynakları") {
                                     $("#inputrole").val("4");
                                 }
 
                             });
                             $(".use-modal").click(function () {
-                                    var $row = $(this).closest("tr");    // Find the row
-                                    var $user_id = $row.find(".user-id").text(); // Find the text
-                                    $("#userID").val($user_id);
-                                });
+                                var $row = $(this).closest("tr");    // Find the row
+                                var $user_id = $row.find(".user-id").text(); // Find the text
+                                $("#userID").val($user_id);
+                            });
                         </script>
 
                         </body>
